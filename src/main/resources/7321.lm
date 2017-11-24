@@ -1,0 +1,61 @@
+Language model created by QuickLM on Fri Nov 24 09:58:19 EST 2017
+Copyright (c) 1996-2010 Carnegie Mellon University and Alexander I. Rudnicky
+
+The model is in standard ARPA format, designed by Doug Paul while he was at MITRE.
+
+The code that was used to produce this language model is available in Open Source.
+Please visit http://www.speech.cs.cmu.edu/tools/ for more information
+
+The (fixed) discount mass is 0.5. The backoffs are computed using the ratio method.
+This model based on a corpus of 9 sentences and 11 words
+
+\data\
+ngram 1=11
+ngram 2=18
+ngram 3=9
+
+\1-grams:
+-0.7782 </s> -0.3010
+-0.7782 <s> -0.2218
+-1.7324 DOWN -0.2218
+-1.7324 GODOWN -0.2218
+-1.7324 GOUP -0.2218
+-1.7324 LEFT -0.2218
+-1.7324 READY -0.2218
+-1.7324 RIGHT -0.2218
+-1.7324 START -0.2218
+-1.7324 STOP -0.2218
+-1.7324 UP -0.2218
+
+\2-grams:
+-1.2553 <s> DOWN 0.0000
+-1.2553 <s> GODOWN 0.0000
+-1.2553 <s> GOUP 0.0000
+-1.2553 <s> LEFT 0.0000
+-1.2553 <s> READY 0.0000
+-1.2553 <s> RIGHT 0.0000
+-1.2553 <s> START 0.0000
+-1.2553 <s> STOP 0.0000
+-1.2553 <s> UP 0.0000
+-0.3010 DOWN </s> -0.3010
+-0.3010 GODOWN </s> -0.3010
+-0.3010 GOUP </s> -0.3010
+-0.3010 LEFT </s> -0.3010
+-0.3010 READY </s> -0.3010
+-0.3010 RIGHT </s> -0.3010
+-0.3010 START </s> -0.3010
+-0.3010 STOP </s> -0.3010
+-0.3010 UP </s> -0.3010
+
+\3-grams:
+-0.3010 <s> DOWN </s>
+-0.3010 <s> GODOWN </s>
+-0.3010 <s> GOUP </s>
+-0.3010 <s> LEFT </s>
+-0.3010 <s> READY </s>
+-0.3010 <s> RIGHT </s>
+-0.3010 <s> START </s>
+-0.3010 <s> STOP </s>
+-0.3010 <s> UP </s>
+
+\end\
