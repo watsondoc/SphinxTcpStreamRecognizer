@@ -8,29 +8,28 @@ import java.net.Socket;
 
 public class VoiceThreadClientHandler implements Runnable {
 
-    private static Socket clientDialog;
+    private Socket clientDialog;
     private ShpinxConfiguration configuration;
     private Integer id;
     private HttpSnakeClient httpClient;
     public VoiceThreadClientHandler(Socket client, Integer id) {
         this.id = id;
-        VoiceThreadClientHandler.clientDialog = client;
+        this.clientDialog = client;
         configuration = new ShpinxConfiguration(LangType.English);
-        httpClient = new HttpSnakeClient();
+        this.httpClient = new HttpSnakeClient();
     }
 
     @Override
     public void run() {
 
         try {
-            DataOutputStream out = new DataOutputStream(clientDialog.getOutputStream());
-            DataInputStream in = new DataInputStream(clientDialog.getInputStream());
+            DataInputStream in = new DataInputStream(this.clientDialog.getInputStream());
             System.out.println("DataInputStream created");
             System.out.println("DataOutputStream  created");
             SpeechResult result;
             StreamSpeechRecognizer recognizer = new StreamSpeechRecognizer(configuration.getConfiguration());
             recognizer.startRecognition(in);
-            while (!clientDialog.isClosed() && (result = recognizer.getResult()) != null) {
+            while (!this.clientDialog.isClosed() && (result = recognizer.getResult()) != null) {
                 System.out.println("Server reading from channel");
                 String rawCommand = result.getHypothesis();
                 System.out.println(rawCommand);
@@ -40,14 +39,13 @@ public class VoiceThreadClientHandler implements Runnable {
 
                 }
                 else if (!command.equalsIgnoreCase("UNKNOW")){
-                    httpClient.sendPut(command.toLowerCase());
+                    this.httpClient.sendPut(command.toLowerCase());
                 }
             }
             System.out.println("Client disconnected");
             System.out.println("Closing connections & channels.");
             in.close();
-            out.close();
-            clientDialog.close();
+            this.clientDialog.close();
 
             System.out.println("Closing connections & channels - DONE.");
         } catch (IOException e) {
