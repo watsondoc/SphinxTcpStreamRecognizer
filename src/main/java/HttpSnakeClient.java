@@ -12,6 +12,7 @@ import org.apache.http.impl.client.DefaultHttpClient;
 public class HttpSnakeClient {
 
     private final String URL = "http://10.0.9.167:9101";
+    //private final String URL = "http://localhost:9101";
 
     public HttpSnakeClient() {
 

@@ -16,8 +16,8 @@ public class ShpinxConfiguration {
         switch (type) {
             case English:
                 configuration.setAcousticModelPath("resource:/edu/cmu/sphinx/models/en-us/en-us");
-                configuration.setDictionaryPath("resource:/7321.dic");
-                configuration.setLanguageModelPath("resource:/7321.lm");
+                configuration.setDictionaryPath("resource:/9143.dic");
+                configuration.setLanguageModelPath("resource:/9143.lm");
                 break;
             case Russian:
                 configuration.setAcousticModelPath("resource:/ru-model");
