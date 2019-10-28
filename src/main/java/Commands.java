@@ -7,8 +7,9 @@ import java.util.HashMap;
 public class Commands {
 
     private ArrayList<String> commandsList;
-    private static final String FILENAME_PATH = "D:\\Sphinx\\src\\main\\resources\\commandsv2.txt";
     private HashMap<String,String> commandsMap;
+    private static final String FILENAME_PATH = "commandsv2.txt";
+    public static final Commands INSTANCE = new Commands();
 
     public Commands() {
         commandsList = new ArrayList<>();
@@ -62,5 +63,4 @@ public class Commands {
         return "UNKNOW";
     }
 
-    public static final Commands INSTANCE = new Commands();
 }
